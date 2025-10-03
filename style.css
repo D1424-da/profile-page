@@ -19,11 +19,13 @@
   
   /* モバイル用の色定義 */
   --mobile-text-primary: #ffffff;
-  --mobile-text-secondary: #e2e8f0;
-  --mobile-text-accent: #38d9a9;
-  --mobile-glass-bg: rgba(255, 255, 255, 0.15);
-  --mobile-glass-border: rgba(255, 255, 255, 0.3);
-  --mobile-highlight-bg: rgba(56, 217, 169, 0.3);
+  --mobile-text-secondary: #cbd5e0;
+  --mobile-text-accent: #00f2fe;
+  --mobile-glass-bg: rgba(0, 0, 0, 0.4);
+  --mobile-glass-border: rgba(255, 255, 255, 0.2);
+  --mobile-highlight-bg: rgba(0, 242, 254, 0.2);
+  --mobile-card-bg: rgba(0, 0, 0, 0.6);
+  --mobile-dark-bg: rgba(0, 0, 0, 0.8);
 }
 
 body {
@@ -824,15 +826,17 @@ body::before {
   /* モバイルでの色の改善 */
   .profile-header {
     padding: 2.5rem 1.8rem;
-    background: var(--mobile-glass-bg);
+    background: var(--mobile-card-bg);
     border: 1px solid var(--mobile-glass-border);
+    backdrop-filter: blur(20px);
   }
 
   .section {
     padding: 2.2rem 1.8rem;
     margin-bottom: 2rem;
-    background: var(--mobile-glass-bg);
+    background: var(--mobile-card-bg);
     border: 1px solid var(--mobile-glass-border);
+    backdrop-filter: blur(20px);
   }
 
   .header-content {
@@ -894,22 +898,25 @@ body::before {
   .focus-tag {
     padding: 0.6rem 1.1rem;
     font-size: 0.9rem;
-    background: var(--mobile-glass-bg);
-    border: 1px solid var(--mobile-glass-border);
+    background: var(--mobile-dark-bg);
+    border: 1px solid var(--mobile-text-accent);
     color: var(--mobile-text-primary);
+    backdrop-filter: blur(10px);
   }
 
   .tech-badge {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
-    background: var(--mobile-glass-bg);
+    background: var(--mobile-dark-bg);
     border: 1px solid var(--mobile-glass-border);
     color: var(--mobile-text-primary);
+    backdrop-filter: blur(10px);
   }
 
   .book-card, .book-item-advanced {
-    background: var(--mobile-glass-bg);
+    background: var(--mobile-card-bg);
     border: 1px solid var(--mobile-glass-border);
+    backdrop-filter: blur(15px);
   }
 
   .book-title, .book-name {
@@ -921,9 +928,10 @@ body::before {
   }
 
   .experience-item {
-    background: var(--mobile-glass-bg);
+    background: var(--mobile-card-bg);
     border: 1px solid var(--mobile-glass-border);
     border-left: 4px solid var(--mobile-text-accent);
+    backdrop-filter: blur(15px);
   }
 
   .experience-title {
@@ -935,8 +943,9 @@ body::before {
   }
 
   .qualification-item {
-    background: var(--mobile-glass-bg);
+    background: var(--mobile-card-bg);
     border: 1px solid var(--mobile-glass-border);
+    backdrop-filter: blur(15px);
   }
 
   .qualification-name {
@@ -954,14 +963,17 @@ body::before {
   .project-background,
   .project-details,
   .project-learning {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--mobile-dark-bg);
     border: 1px solid var(--mobile-glass-border);
     border-left: 4px solid var(--mobile-text-accent);
+    backdrop-filter: blur(10px);
   }
 
   .learning-note {
-    background: rgba(56, 217, 169, 0.15);
-    border: 1px solid rgba(56, 217, 169, 0.4);
+    background: var(--mobile-dark-bg);
+    border: 1px solid var(--mobile-text-accent);
+    border-left: 4px solid var(--mobile-text-accent);
+    backdrop-filter: blur(10px);
   }
 
   .learning-note p {
@@ -1010,9 +1022,10 @@ body::before {
   }
 
   .footer {
-    background: var(--mobile-glass-bg);
+    background: var(--mobile-card-bg);
     border-top: 1px solid var(--mobile-glass-border);
     color: var(--mobile-text-secondary);
+    backdrop-filter: blur(20px);
   }
 
   /* モバイルでのアニメーション調整 */
@@ -1023,13 +1036,13 @@ body::before {
 @media (max-width: 480px) {
   body {
     padding: 0.5rem 0.3rem;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
   }
 
   .profile-header, .section {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
   }
 
   .name {
@@ -1061,21 +1074,24 @@ body::before {
   }
 
   .focus-tag, .tech-badge {
-    background: rgba(255, 255, 255, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 242, 254, 0.6);
     color: #ffffff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
   }
 
   .book-card, .book-item-advanced, .experience-item, .qualification-item {
-    background: rgba(255, 255, 255, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
   }
 
   .project-background,
   .project-details, 
   .project-learning {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
   }
 }
