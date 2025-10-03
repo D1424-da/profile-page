@@ -16,6 +16,14 @@
   --text-accent: #00f2fe;
   --shadow-glow: 0 8px 32px rgba(31, 38, 135, 0.37);
   --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.5);
+  
+  /* モバイル用の色定義 */
+  --mobile-text-primary: #ffffff;
+  --mobile-text-secondary: #e2e8f0;
+  --mobile-text-accent: #38d9a9;
+  --mobile-glass-bg: rgba(255, 255, 255, 0.15);
+  --mobile-glass-border: rgba(255, 255, 255, 0.3);
+  --mobile-highlight-bg: rgba(56, 217, 169, 0.3);
 }
 
 body {
@@ -813,8 +821,18 @@ body::before {
     padding: 1rem 0.5rem;
   }
 
+  /* モバイルでの色の改善 */
   .profile-header {
     padding: 2.5rem 1.8rem;
+    background: var(--mobile-glass-bg);
+    border: 1px solid var(--mobile-glass-border);
+  }
+
+  .section {
+    padding: 2.2rem 1.8rem;
+    margin-bottom: 2rem;
+    background: var(--mobile-glass-bg);
+    border: 1px solid var(--mobile-glass-border);
   }
 
   .header-content {
@@ -826,28 +844,136 @@ body::before {
   .avatar {
     width: 100px;
     height: 100px;
+    border: 3px solid var(--mobile-text-accent);
+    box-shadow: 0 0 25px rgba(56, 217, 169, 0.5);
   }
 
   .name {
     font-size: 1.6rem;
+    color: var(--mobile-text-primary);
   }
 
   .title {
     font-size: 1.15rem;
+    color: var(--mobile-text-accent);
   }
 
-  .section {
-    padding: 2.2rem 1.8rem;
-    margin-bottom: 2rem;
+  .meta, .status {
+    color: var(--mobile-text-secondary);
   }
 
   .section-title {
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
+    color: var(--mobile-text-primary);
   }
 
   .project-title {
     font-size: 1.2rem;
+    color: var(--mobile-text-primary);
+  }
+
+  .bio-text, .project-text, .experience-desc {
+    color: var(--mobile-text-secondary);
+  }
+
+  .subsection-title, .book-section-title {
+    color: var(--mobile-text-primary);
+  }
+
+  .project-subtitle {
+    color: var(--mobile-text-accent);
+  }
+
+  .highlight {
+    background: var(--mobile-highlight-bg);
+    color: var(--mobile-text-accent);
+    border: 1px solid rgba(56, 217, 169, 0.5);
+  }
+
+  .focus-tag {
+    padding: 0.6rem 1.1rem;
+    font-size: 0.9rem;
+    background: var(--mobile-glass-bg);
+    border: 1px solid var(--mobile-glass-border);
+    color: var(--mobile-text-primary);
+  }
+
+  .tech-badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: var(--mobile-glass-bg);
+    border: 1px solid var(--mobile-glass-border);
+    color: var(--mobile-text-primary);
+  }
+
+  .book-card, .book-item-advanced {
+    background: var(--mobile-glass-bg);
+    border: 1px solid var(--mobile-glass-border);
+  }
+
+  .book-title, .book-name {
+    color: var(--mobile-text-primary);
+  }
+
+  .book-meta {
+    color: var(--mobile-text-secondary);
+  }
+
+  .experience-item {
+    background: var(--mobile-glass-bg);
+    border: 1px solid var(--mobile-glass-border);
+    border-left: 4px solid var(--mobile-text-accent);
+  }
+
+  .experience-title {
+    color: var(--mobile-text-primary);
+  }
+
+  .experience-period {
+    color: var(--mobile-text-secondary);
+  }
+
+  .qualification-item {
+    background: var(--mobile-glass-bg);
+    border: 1px solid var(--mobile-glass-border);
+  }
+
+  .qualification-name {
+    color: var(--mobile-text-primary);
+  }
+
+  .qualification-date {
+    color: var(--mobile-text-secondary);
+  }
+
+  .contact-text {
+    color: var(--mobile-text-secondary);
+  }
+
+  .project-background,
+  .project-details,
+  .project-learning {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--mobile-glass-border);
+    border-left: 4px solid var(--mobile-text-accent);
+  }
+
+  .learning-note {
+    background: rgba(56, 217, 169, 0.15);
+    border: 1px solid rgba(56, 217, 169, 0.4);
+  }
+
+  .learning-note p {
+    color: var(--mobile-text-secondary);
+  }
+
+  .project-list li {
+    color: var(--mobile-text-secondary);
+  }
+
+  .project-list li:before {
+    color: var(--mobile-text-accent);
   }
 
   .book-grid {
@@ -869,18 +995,8 @@ body::before {
     gap: 0.6rem;
   }
 
-  .tech-badge {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-  }
-
   .focus-areas {
     gap: 0.8rem;
-  }
-
-  .focus-tag {
-    padding: 0.6rem 1.1rem;
-    font-size: 0.9rem;
   }
 
   .github-repo-link {
@@ -893,6 +1009,73 @@ body::before {
     font-size: 0.95rem;
   }
 
+  .footer {
+    background: var(--mobile-glass-bg);
+    border-top: 1px solid var(--mobile-glass-border);
+    color: var(--mobile-text-secondary);
+  }
+
   /* モバイルでのアニメーション調整 */
   .focus-tag { animation: none; }
+}
+
+/* 小型スマホ（480px以下）用の追加調整 */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem 0.3rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  }
+
+  .profile-header, .section {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+  }
+
+  .name {
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .title {
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .bio-text, .project-text, .experience-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .highlight {
+    background: rgba(56, 217, 169, 0.4);
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .focus-tag, .tech-badge {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .book-card, .book-item-advanced, .experience-item, .qualification-item {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .project-background,
+  .project-details, 
+  .project-learning {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+  }
 }
