@@ -16,16 +16,6 @@
   --text-accent: #00f2fe;
   --shadow-glow: 0 8px 32px rgba(31, 38, 135, 0.37);
   --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.5);
-  
-  /* モバイル用の色定義 */
-  --mobile-text-primary: #ffffff;
-  --mobile-text-secondary: #cbd5e0;
-  --mobile-text-accent: #00f2fe;
-  --mobile-glass-bg: rgba(0, 0, 0, 0.4);
-  --mobile-glass-border: rgba(255, 255, 255, 0.2);
-  --mobile-highlight-bg: rgba(0, 242, 254, 0.2);
-  --mobile-card-bg: rgba(0, 0, 0, 0.6);
-  --mobile-dark-bg: rgba(0, 0, 0, 0.8);
 }
 
 body {
@@ -39,7 +29,6 @@ body {
   overflow-x: hidden;
 }
 
-/* 背景装飾 */
 body::before {
   content: '';
   position: fixed;
@@ -111,25 +100,6 @@ body::before {
   flex-shrink: 0;
   box-shadow: 0 0 30px rgba(0, 242, 254, 0.4);
   transition: all 0.3s ease;
-  position: relative;
-}
-
-.avatar::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border-radius: 50%;
-  background: var(--accent-gradient);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.avatar:hover::before {
-  opacity: 1;
 }
 
 .avatar:hover {
@@ -149,7 +119,6 @@ body::before {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
-  animation: fadeInRight 0.8s ease-out 0.2s both;
 }
 
 .title {
@@ -157,33 +126,18 @@ body::before {
   color: var(--text-accent);
   font-weight: 600;
   margin-bottom: 0.3rem;
-  animation: fadeInRight 0.8s ease-out 0.4s both;
 }
 
 .meta {
   color: var(--text-secondary);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
-  animation: fadeInRight 0.8s ease-out 0.6s both;
 }
 
 .status {
   color: var(--text-primary);
   font-size: 0.9rem;
   font-weight: 500;
-  padding: 0.5rem 0;
-  animation: fadeInRight 0.8s ease-out 0.8s both;
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .focus-areas {
@@ -204,25 +158,6 @@ body::before {
   font-weight: 500;
   border: 1px solid var(--glass-border);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  letter-spacing: 0.01em;
-}
-
-.focus-tag::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--accent-gradient);
-  transition: left 0.3s ease;
-  z-index: -1;
-}
-
-.focus-tag:hover::before {
-  left: 0;
 }
 
 .focus-tag:hover {
@@ -259,7 +194,6 @@ body::before {
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--glass-border);
   position: relative;
-  letter-spacing: 0.02em;
 }
 
 .section-title::after {
@@ -277,7 +211,6 @@ body::before {
   color: var(--text-secondary);
   font-size: 1.05rem;
   margin-bottom: 1.5rem;
-  letter-spacing: 0.02em;
 }
 
 .subsection-title {
@@ -285,7 +218,6 @@ body::before {
   font-weight: 600;
   color: var(--text-primary);
   margin: 2.5rem 0 1.5rem;
-  letter-spacing: 0.01em;
 }
 
 .highlight {
@@ -298,32 +230,36 @@ body::before {
 }
 
 /* Projects */
-.project-highlight {
+.project-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
   border: 1px solid var(--glass-border);
   position: relative;
   overflow: hidden;
 }
 
-.project-highlight::before {
+.project-card:last-child {
+  margin-bottom: 0;
+}
+
+.project-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: var(--secondary-gradient);
+  height: 3px;
+  background: var(--accent-gradient);
 }
 
 .project-title {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
-  letter-spacing: 0.01em;
 }
 
 .project-tags {
@@ -342,7 +278,6 @@ body::before {
   font-weight: 500;
   box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
   transition: all 0.3s ease;
-  letter-spacing: 0.01em;
 }
 
 .project-tag:hover {
@@ -350,9 +285,7 @@ body::before {
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
 }
 
-.project-background,
-.project-details,
-.project-learning {
+.project-section {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(5px);
   padding: 2rem;
@@ -367,14 +300,12 @@ body::before {
   font-weight: 600;
   color: var(--text-accent);
   margin-bottom: 1.2rem;
-  letter-spacing: 0.02em;
 }
 
 .project-text {
   color: var(--text-secondary);
   line-height: 2;
   font-size: 1rem;
-  letter-spacing: 0.01em;
 }
 
 .project-list {
@@ -389,7 +320,6 @@ body::before {
   margin-bottom: 1.2rem;
   padding-left: 2rem;
   position: relative;
-  letter-spacing: 0.01em;
 }
 
 .project-list li:before {
@@ -400,9 +330,26 @@ body::before {
   font-weight: bold;
 }
 
+.tech-stack-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tech-badge-sm {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  color: var(--text-primary);
+  padding: 0.4rem 0.9rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--glass-border);
+}
+
 .github-link-section {
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .github-repo-link {
@@ -417,25 +364,6 @@ body::before {
   font-weight: 600;
   font-size: 1.05rem;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  letter-spacing: 0.01em;
-}
-
-.github-repo-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--accent-gradient);
-  transition: left 0.3s ease;
-  z-index: -1;
-}
-
-.github-repo-link:hover::before {
-  left: 0;
 }
 
 .github-repo-link:hover {
@@ -461,169 +389,253 @@ body::before {
   font-weight: 500;
   border: 1px solid var(--glass-border);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  letter-spacing: 0.01em;
 }
 
-.tech-badge::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--primary-gradient);
-  transition: left 0.3s ease;
-  z-index: -1;
-  opacity: 0.8;
+/* Main Project Styles */
+.main-project {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border: 2px solid var(--glass-border);
 }
 
-.tech-badge:hover::before {
-  left: 0;
+.main-project::before {
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
 }
 
-.tech-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-}
-
-.tech-badge.tech-self::before {
-  background: var(--accent-gradient);
-}
-
-.tech-badge.tech-other::before {
-  background: var(--secondary-gradient);
-}
-
-/* Learning Journey */
-.learning-note {
-  background: rgba(245, 158, 11, 0.1);
-  backdrop-filter: blur(10px);
-  border-left: 4px solid #f59e0b;
-  padding: 1.2rem;
-  margin-bottom: 2rem;
+/* Subsystem Cards */
+.subsystem-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
   border-radius: 12px;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  margin-bottom: 2rem;
+  border-left: 4px solid #667eea;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.learning-note p {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.9;
-  letter-spacing: 0.01em;
+.subsystem-card:hover {
+  transform: translateX(5px);
+  border-left-color: var(--text-accent);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
 }
 
-.books-section {
-  margin-bottom: 3rem;
-}
-
-.books-section:last-child {
-  margin-bottom: 0;
-}
-
-.book-section-title {
+.subsystem-title {
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--glass-border);
 }
 
-.book-note {
+.subsystem-desc {
   color: var(--text-secondary);
-  font-size: 0.85rem;
-  margin-bottom: 1.2rem;
-  font-style: italic;
-}
-
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.2rem;
-}
-
-.book-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  padding: 1.3rem;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  transition: all 0.3s ease;
-}
-
-.book-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
-  border-color: var(--text-accent);
-}
-
-.book-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-
-.book-info {
-  flex: 1;
-}
-
-.book-title {
-  font-weight: 600;
-  color: var(--text-primary);
+  line-height: 1.9;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
 }
 
-.book-meta {
-  font-size: 0.85rem;
+.subsystem-features {
+  margin-top: 1.5rem;
+}
+
+.subsystem-features strong {
+  color: var(--text-accent);
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.feature-list li {
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.9;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
 }
 
-.book-list-advanced {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-.book-item-advanced {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-left: 4px solid #ed8936;
-  padding: 1.3rem;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: all 0.3s ease;
-}
-
-.book-item-advanced:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(237, 137, 54, 0.3);
-}
-
-.book-item-advanced.book-item-current {
-  border-left-color: var(--text-accent);
-}
-
-.book-item-advanced.book-item-current:hover {
-  box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
-}
-
-.book-status {
+.feature-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-accent);
+  font-weight: bold;
   font-size: 1.2rem;
 }
 
-.book-name {
+.github-repo-link-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--primary-gradient);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
   font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.github-repo-link-sm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Results Section */
+.results-section {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.05) 0%, rgba(102, 126, 234, 0.05) 100%);
+  border-left: 4px solid var(--text-accent);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.result-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.result-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.2);
+}
+
+.result-number {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-accent);
+  margin-bottom: 0.5rem;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Simple Project Card */
+.project-card-simple {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.project-card-simple:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+}
+
+.project-title-simple {
+  font-size: 1.2rem;
+  font-weight: 600;
   color: var(--text-primary);
-  font-size: 0.95rem;
-  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+}
+
+.project-desc-simple {
+  color: var(--text-secondary);
+  line-height: 1.9;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments for new elements */
+@media (max-width: 768px) {
+  .subsystem-card {
+    padding: 1.5rem;
+  }
+
+  .subsystem-title {
+    font-size: 1.05rem;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .result-number {
+    font-size: 1.2rem;
+  }
+
+  .github-repo-link-sm {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .subsystem-card {
+    padding: 1.2rem;
+  }
+
+  .feature-list li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Learning */
+.learning-summary {
+  color: var(--text-secondary);
+  line-height: 2;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.learning-books {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #f59e0b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.book-category {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.book-simple-list {
+  list-style: none;
+  padding: 0;
+}
+
+.book-simple-list li {
+  color: var(--text-secondary);
+  line-height: 2;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.book-simple-list li:before {
+  content: "📚";
+  position: absolute;
+  left: 0;
 }
 
 /* Experience */
@@ -656,20 +668,17 @@ body::before {
   color: var(--text-primary);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  letter-spacing: 0.01em;
 }
 
 .experience-period {
   color: var(--text-secondary);
   font-size: 0.95rem;
-  margin-bottom: 0.2rem;
 }
 
 .experience-desc {
   color: var(--text-secondary);
   line-height: 2;
   font-size: 1rem;
-  letter-spacing: 0.01em;
 }
 
 /* Qualifications */
@@ -711,13 +720,11 @@ body::before {
   color: var(--text-primary);
   font-size: 1rem;
   margin-bottom: 0.4rem;
-  letter-spacing: 0.01em;
 }
 
 .qualification-date {
   color: var(--text-secondary);
   font-size: 0.9rem;
-  letter-spacing: 0.01em;
 }
 
 /* Contact */
@@ -726,7 +733,6 @@ body::before {
   margin-bottom: 2rem;
   line-height: 2;
   font-size: 1.05rem;
-  letter-spacing: 0.01em;
 }
 
 .contact-links {
@@ -746,25 +752,6 @@ body::before {
   font-weight: 500;
   transition: all 0.3s ease;
   font-size: 1rem;
-  position: relative;
-  overflow: hidden;
-  letter-spacing: 0.01em;
-}
-
-.contact-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--accent-gradient);
-  transition: left 0.3s ease;
-  z-index: -1;
-}
-
-.contact-link:hover::before {
-  left: 0;
 }
 
 .contact-link:hover {
@@ -795,26 +782,6 @@ body::before {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border-radius: 20px 20px 0 0;
-  letter-spacing: 0.01em;
-}
-
-/* スムーススクロール効果 */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-.focus-tag:nth-child(1) { animation: float 6s ease-in-out infinite; }
-.focus-tag:nth-child(2) { animation: float 6s ease-in-out infinite 2s; }
-.focus-tag:nth-child(3) { animation: float 6s ease-in-out infinite 4s; }
-
-/* パフォーマンス向上のためのスクロール効果 */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
 }
 
 /* Responsive */
@@ -823,20 +790,8 @@ body::before {
     padding: 1rem 0.5rem;
   }
 
-  /* モバイルでの色の改善 */
-  .profile-header {
-    padding: 2.5rem 1.8rem;
-    background: var(--mobile-card-bg);
-    border: 1px solid var(--mobile-glass-border);
-    backdrop-filter: blur(20px);
-  }
-
-  .section {
-    padding: 2.2rem 1.8rem;
-    margin-bottom: 2rem;
-    background: var(--mobile-card-bg);
-    border: 1px solid var(--mobile-glass-border);
-    backdrop-filter: blur(20px);
+  .profile-header, .section {
+    padding: 2rem 1.5rem;
   }
 
   .header-content {
@@ -848,250 +803,62 @@ body::before {
   .avatar {
     width: 100px;
     height: 100px;
-    border: 3px solid var(--mobile-text-accent);
-    box-shadow: 0 0 25px rgba(56, 217, 169, 0.5);
   }
 
   .name {
     font-size: 1.6rem;
-    color: var(--mobile-text-primary);
   }
 
   .title {
-    font-size: 1.15rem;
-    color: var(--mobile-text-accent);
-  }
-
-  .meta, .status {
-    color: var(--mobile-text-secondary);
+    font-size: 1rem;
   }
 
   .section-title {
     font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    color: var(--mobile-text-primary);
+  }
+
+  .project-card {
+    padding: 1.8rem;
   }
 
   .project-title {
     font-size: 1.2rem;
-    color: var(--mobile-text-primary);
-  }
-
-  .bio-text, .project-text, .experience-desc {
-    color: var(--mobile-text-secondary);
-  }
-
-  .subsection-title, .book-section-title {
-    color: var(--mobile-text-primary);
-  }
-
-  .project-subtitle {
-    color: var(--mobile-text-accent);
-  }
-
-  .highlight {
-    background: var(--mobile-highlight-bg);
-    color: var(--mobile-text-accent);
-    border: 1px solid rgba(56, 217, 169, 0.5);
-  }
-
-  .focus-tag {
-    padding: 0.6rem 1.1rem;
-    font-size: 0.9rem;
-    background: var(--mobile-dark-bg);
-    border: 1px solid var(--mobile-text-accent);
-    color: var(--mobile-text-primary);
-    backdrop-filter: blur(10px);
-  }
-
-  .tech-badge {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    background: var(--mobile-dark-bg);
-    border: 1px solid var(--mobile-glass-border);
-    color: var(--mobile-text-primary);
-    backdrop-filter: blur(10px);
-  }
-
-  .book-card, .book-item-advanced {
-    background: var(--mobile-card-bg);
-    border: 1px solid var(--mobile-glass-border);
-    backdrop-filter: blur(15px);
-  }
-
-  .book-title, .book-name {
-    color: var(--mobile-text-primary);
-  }
-
-  .book-meta {
-    color: var(--mobile-text-secondary);
-  }
-
-  .experience-item {
-    background: var(--mobile-card-bg);
-    border: 1px solid var(--mobile-glass-border);
-    border-left: 4px solid var(--mobile-text-accent);
-    backdrop-filter: blur(15px);
-  }
-
-  .experience-title {
-    color: var(--mobile-text-primary);
-  }
-
-  .experience-period {
-    color: var(--mobile-text-secondary);
-  }
-
-  .qualification-item {
-    background: var(--mobile-card-bg);
-    border: 1px solid var(--mobile-glass-border);
-    backdrop-filter: blur(15px);
-  }
-
-  .qualification-name {
-    color: var(--mobile-text-primary);
-  }
-
-  .qualification-date {
-    color: var(--mobile-text-secondary);
-  }
-
-  .contact-text {
-    color: var(--mobile-text-secondary);
-  }
-
-  .project-background,
-  .project-details,
-  .project-learning {
-    background: var(--mobile-dark-bg);
-    border: 1px solid var(--mobile-glass-border);
-    border-left: 4px solid var(--mobile-text-accent);
-    backdrop-filter: blur(10px);
-  }
-
-  .learning-note {
-    background: var(--mobile-dark-bg);
-    border: 1px solid var(--mobile-text-accent);
-    border-left: 4px solid var(--mobile-text-accent);
-    backdrop-filter: blur(10px);
-  }
-
-  .learning-note p {
-    color: var(--mobile-text-secondary);
-  }
-
-  .project-list li {
-    color: var(--mobile-text-secondary);
-  }
-
-  .project-list li:before {
-    color: var(--mobile-text-accent);
-  }
-
-  .book-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .book-list-advanced {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
   }
 
   .qualifications {
     grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .tech-stack {
-    gap: 0.6rem;
   }
 
   .focus-areas {
     gap: 0.8rem;
   }
 
+  .focus-tag {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 1.4rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
   .github-repo-link {
-    padding: 0.9rem 2rem;
-    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
   }
 
   .contact-link {
     padding: 0.9rem 1.5rem;
     font-size: 0.95rem;
-  }
-
-  .footer {
-    background: var(--mobile-card-bg);
-    border-top: 1px solid var(--mobile-glass-border);
-    color: var(--mobile-text-secondary);
-    backdrop-filter: blur(20px);
-  }
-
-  /* モバイルでのアニメーション調整 */
-  .focus-tag { animation: none; }
-}
-
-/* 小型スマホ（480px以下）用の追加調整 */
-@media (max-width: 480px) {
-  body {
-    padding: 0.5rem 0.3rem;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-  }
-
-  .profile-header, .section {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(20px);
-  }
-
-  .name {
-    font-size: 1.4rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  }
-
-  .title {
-    font-size: 1.1rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  .section-title {
-    font-size: 1.2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  .bio-text, .project-text, .experience-desc {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
-  }
-
-  .highlight {
-    background: rgba(56, 217, 169, 0.4);
-    color: #ffffff;
-    font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  }
-
-  .focus-tag, .tech-badge {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(0, 242, 254, 0.6);
-    color: #ffffff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-  }
-
-  .book-card, .book-item-advanced, .experience-item, .qualification-item {
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
-  }
-
-  .project-background,
-  .project-details, 
-  .project-learning {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
   }
 }

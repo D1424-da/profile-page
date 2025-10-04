@@ -2,242 +2,255 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>池田大介 | ITプログラマー</title>
+  <title>池田大介 | ITエンジニア</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="44歳からIT業界に挑戦。データ分析・機械学習・業務効率化に興味があります。">
+  <meta name="description" content="44歳からIT業界に挑戦。業務効率化・アプリ開発・データ処理で実務課題を解決します。">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+    <!-- Header -->
     <div class="profile-header">
       <div class="header-content">
-        <img class="avatar" src="https://avatars.githubusercontent.com/u/1?v=4" alt="池田大介">
+        <img class="avatar" src="https://avatars.githubusercontent.com/D1424-da" alt="池田大介">
         <div class="header-text">
           <h1 class="name">池田 大介 (Daisuke Ikeda)</h1>
-          <p class="title">ITプログラマー志望</p>
+          <p class="title">ITエンジニア志望</p>
           <p class="meta">44歳 | 公共職業訓練受講中（2025年6月～12月）</p>
-          <p class="status">🟢 転職活動中 | データ分析・AI・業務効率化に関心</p>
+          <p class="status">🟢 転職活動中</p>
         </div>
       </div>
       <div class="focus-areas">
-        <span class="focus-tag">📊 データ分析</span>
-        <span class="focus-tag">🤖 機械学習・AI</span>
         <span class="focus-tag">⚡ 業務効率化</span>
+        <span class="focus-tag">💻 アプリ開発</span>
+        <span class="focus-tag">🔄 業務自動化</span>
       </div>
     </div>
 
+    <!-- About Me -->
     <div class="section">
       <h2 class="section-title">👋 About Me</h2>
       <p class="bio-text">
-        44歳からIT業界に挑戦しています。24年間にわたり測量業・営業・自営業など多様な業界で実務経験を積み、
+        24年間にわたり測量業・営業・自営業など多様な業界で実務経験を積み、
         現在は公共職業訓練にてプログラミング技術を習得中です。
       </p>
       <p class="bio-text">
-        プログラミング学習に情熱を注いでおり、休日には<span class="highlight">20時間連続でコードを書き続けるほど没頭</span>することもあります。
-        測量業務での<span class="highlight">年間40～80件の境界確定・登記業務</span>を通じて培った精密性と責任感、
-        自営業での<span class="highlight">SNS集客で月間60件の新規顧客獲得</span>の経験を活かし、
-        ビジネス課題を技術的に解決できるプログラマーを目指しています。
+        <span class="highlight">測量業務8年の経験</span>で培った問題発見力と、
+        プログラミングスキルを組み合わせ、実務の課題を技術で解決することに取り組んでいます。
+        業務全体を見渡した自動化システムの設計・開発が強みです。
       </p>
     </div>
 
+    <!-- Main Project -->
     <div class="section">
-      <h2 class="section-title">🚀 Projects</h2>
+      <h2 class="section-title">🚀 Featured Project</h2>
       
-      <div class="project-highlight">
-        <h3 class="project-title">機械学習を活用したPC操作支援アプリ</h3>
+      <!-- Integrated System -->
+      <div class="project-card main-project">
+        <h3 class="project-title">📊 測量報告書作成自動化システム</h3>
+        
         <div class="project-tags">
           <span class="project-tag">Python</span>
           <span class="project-tag">機械学習</span>
-          <span class="project-tag">画像認識</span>
-          <span class="project-tag">業務効率化</span>
-        </div>
-        
-        <div class="project-background">
-          <h4 class="project-subtitle">📋 開発背景</h4>
-          <p class="project-text">
-            職場で定年退職後に再雇用された方々のPC操作をサポートするために開発。
-            PC操作に不慣れな方でも使いやすいインターフェースを目指しました。
-          </p>
+          <span class="project-tag">Excel VBA</span>
+          <span class="project-tag">業務自動化</span>
         </div>
 
-        <div class="project-details">
-          <h4 class="project-subtitle">💡 技術的な取り組み</h4>
+        <div class="project-section">
+          <h4 class="project-subtitle">解決した課題</h4>
+          <p class="project-text">
+            測量業務において、以下の課題がありました：
+          </p>
           <ul class="project-list">
-            <li><strong>データセット作成：</strong><span class="highlight">12クラス × 各16,000枚 = 計192,000枚の画像データ</span>を準備</li>
-            <li><strong>開発期間：</strong>2〜3日間、睡眠時間2時間程度で集中的にデータ準備を実施</li>
-            <li><strong>学習方法：</strong>生成AIを活用しながら、コードの仕組みを理解しながら開発</li>
-            <li><strong>目的：</strong>実際に動くアプリケーションを作ることで、機械学習の実装を体験</li>
+            <li>写真内容（遠景/近景など）を目視で判別する必要がある</li>
+            <li>報告書に写真を1枚ずつ手作業で配置する必要がある</li>
+            <li>測量画像の管理が煩雑で時間がかかる</li>
           </ul>
-        </div>
-
-        <div class="project-learning">
-          <h4 class="project-subtitle">📚 学んだこと</h4>
           <p class="project-text">
-            生成AIを活用しながらコードを書くことで、「なぜこのコードが必要なのか」「どういう仕組みで動いているのか」を
-            実践を通じて学習しています。書籍で学んだ知識を実際のアプリケーション開発に活かす過程で、
-            理論と実践の橋渡しができました。
+            この作業は1件あたり<span class="highlight">数時間かかっていました</span>。
+            年間40〜80件の業務で大きな負担となっていたため、
+            <span class="highlight">3つのサブシステムを連携させた完全自動化システム</span>を開発しました。
           </p>
         </div>
 
+        <div class="project-section">
+          <h4 class="project-subtitle">システム構成</h4>
+          <p class="project-text">業務フローに沿った3段階の自動化を実現：</p>
+        </div>
+
+        <div class="subsystem-card">
+          <h4 class="subsystem-title">ステップ1: GPSSCAN（写真リネーム自動化）</h4>
+          <p class="subsystem-desc">
+            SIMファイル（測量データ）とGPS情報から、写真を測量点に自動マッチング。
+            体系的なファイル名に一括リネーム。
+          </p>
+          <div class="subsystem-features">
+            <strong>主な機能：</strong>
+            <ul class="feature-list">
+              <li>SIMファイル解析（A01/A02/D00形式対応）</li>
+              <li>GPS座標の自動平面直角座標変換（EPSG:6669-6687）</li>
+              <li>ドラッグ&ドロップによる直感的なマッチングUI</li>
+              <li>測量点・地番境界の地図可視化</li>
+            </ul>
+            <div class="tech-stack-inline">
+              <span class="tech-badge-sm">Python</span>
+              <span class="tech-badge-sm">Tkinter</span>
+              <span class="tech-badge-sm">Matplotlib</span>
+              <span class="tech-badge-sm">pyproj</span>
+              <span class="tech-badge-sm">pandas</span>
+            </div>
+          </div>
+          <div class="github-link-section">
+            <a href="https://github.com/D1424-da/GPSSCAN" target="_blank" class="github-repo-link-sm">
+              <span class="link-icon">💻</span> GitHubでコードを見る
+            </a>
+          </div>
+        </div>
+
+        <div class="subsystem-card">
+          <h4 class="subsystem-title">ステップ2: AI画像認識（写真分類自動化）</h4>
+          <p class="subsystem-desc">
+            機械学習により、写真の内容を自動判別。遠景/近景などを自動分類し、
+            次のステップに必要な情報を付与。
+          </p>
+          <div class="subsystem-features">
+            <strong>技術的な取り組み：</strong>
+            <ul class="feature-list">
+              <li>192,000枚の画像データセット作成（12クラス × 各16,000枚）</li>
+              <li>TensorFlow/Kerasによるディープラーニングモデル構築</li>
+              <li>データ拡張による汎化性能向上</li>
+            </ul>
+            <div class="tech-stack-inline">
+              <span class="tech-badge-sm">Python</span>
+              <span class="tech-badge-sm">TensorFlow/Keras</span>
+              <span class="tech-badge-sm">OpenCV</span>
+              <span class="tech-badge-sm">scikit-learn</span>
+            </div>
+          </div>
+          <div class="github-link-section">
+            <a href="https://github.com/D1424-da/AI" target="_blank" class="github-repo-link-sm">
+              <span class="link-icon">💻</span> GitHubでコードを見る
+            </a>
+          </div>
+        </div>
+
+        <div class="subsystem-card">
+          <h4 class="subsystem-title">ステップ3: 自動写真アルバム（報告書配置自動化）</h4>
+          <p class="subsystem-desc">
+            Excel VBAにより、整理された写真を報告書フォーマットに自動配置。
+            最終的な測量報告書を完成。
+          </p>
+          <div class="subsystem-features">
+            <strong>実装内容：</strong>
+            <ul class="feature-list">
+              <li>測量点ごとに写真を自動配置</li>
+              <li>遠景/近景の配置位置を自動判定</li>
+              <li>報告書フォーマットに準拠した体裁調整</li>
+            </ul>
+            <div class="tech-stack-inline">
+              <span class="tech-badge-sm">Excel VBA</span>
+              <span class="tech-badge-sm">マクロ自動化</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-section results-section">
+          <h4 class="project-subtitle">成果</h4>
+          <div class="results-grid">
+            <div class="result-item">
+              <div class="result-number">数時間 → 数分</div>
+              <div class="result-label">作業時間の劇的短縮</div>
+            </div>
+            <div class="result-item">
+              <div class="result-number">年間40〜80件</div>
+              <div class="result-label">適用業務数</div>
+            </div>
+            <div class="result-item">
+              <div class="result-number">3システム連携</div>
+              <div class="result-label">統合ワークフロー</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Projects -->
+    <div class="section">
+      <h2 class="section-title">💼 Other Projects</h2>
+      
+      <div class="project-card-simple">
+        <h3 class="project-title-simple">📁 高速ファイル検索アプリ</h3>
+        <p class="project-desc-simple">
+          測量資料を紙ベースで保管していたため、保管場所と書類管理が大変という課題を解決。
+          デジタル化した資料を高速検索できるツールを開発し、必要な書類をすぐに見つけられるようにしました。
+        </p>
+        <div class="tech-stack-inline">
+          <span class="tech-badge-sm">Python</span>
+          <span class="tech-badge-sm">Tkinter</span>
+        </div>
         <div class="github-link-section">
-          <a href="https://github.com/D1424-da" target="_blank" class="github-repo-link">
+          <a href="https://github.com/D1424-da/file-search-app" target="_blank" class="github-repo-link-sm">
             <span class="link-icon">💻</span> GitHubでコードを見る
           </a>
         </div>
       </div>
     </div>
 
+    <!-- Tech Stack -->
     <div class="section">
       <h2 class="section-title">💻 Tech Stack</h2>
       
-      <h3 class="subsection-title">訓練校で学習中</h3>
+      <h3 class="subsection-title">言語</h3>
       <div class="tech-stack">
         <span class="tech-badge">Python</span>
-        <span class="tech-badge">PHP</span>
+        <span class="tech-badge">Excel VBA</span>
         <span class="tech-badge">JavaScript</span>
-        <span class="tech-badge">HTML/CSS</span>
-        <span class="tech-badge">Visual C#</span>
+        <span class="tech-badge">PHP</span>
+        <span class="tech-badge">C#</span>
         <span class="tech-badge">SQL</span>
+        <span class="tech-badge">HTML/CSS</span>
       </div>
 
-      <h3 class="subsection-title">独学で習得中</h3>
+      <h3 class="subsection-title">フレームワーク・ライブラリ</h3>
       <div class="tech-stack">
-        <span class="tech-badge tech-self">機械学習</span>
-        <span class="tech-badge tech-self">データ分析</span>
-        <span class="tech-badge tech-self">スクレイピング</span>
-        <span class="tech-badge tech-self">Deep Learning</span>
-        <span class="tech-badge tech-self">データ可視化</span>
-        <span class="tech-badge tech-self">統計学</span>
+        <span class="tech-badge tech-fw">Tkinter (GUI)</span>
+        <span class="tech-badge tech-fw">pandas (データ処理)</span>
+        <span class="tech-badge tech-fw">NumPy</span>
+        <span class="tech-badge tech-fw">Matplotlib (可視化)</span>
+        <span class="tech-badge tech-fw">OpenCV (画像処理)</span>
+        <span class="tech-badge tech-fw">TensorFlow/Keras (機械学習)</span>
+        <span class="tech-badge tech-fw">scikit-learn</span>
       </div>
 
-      <h3 class="subsection-title">その他のスキル</h3>
+      <h3 class="subsection-title">その他</h3>
       <div class="tech-stack">
+        <span class="tech-badge tech-other">Git</span>
         <span class="tech-badge tech-other">CAD</span>
         <span class="tech-badge tech-other">デジタルマーケティング</span>
-        <span class="tech-badge tech-other">ChatGPT活用</span>
       </div>
     </div>
 
+    <!-- Learning -->
     <div class="section">
-      <h2 class="section-title">📚 Learning Journey</h2>
+      <h2 class="section-title">📚 継続的な学習</h2>
       
-      <div class="learning-note">
-        <p>プログラミング未経験からのスタートのため、まずは基礎固めとして入門書を中心に学習を進めました。<br>
-        現在はオライリーの技術書にも挑戦し、より深い理解を目指しています。</p>
-      </div>
+      <p class="learning-summary">
+        オライリー技術書を中心に、理論と実践を両立させた学習を継続中。
+        学んだ知識は即座にプロジェクトで実装し、実務で使える技術習得を目指しています。
+      </p>
 
-      <div class="books-section">
-        <h3 class="book-section-title">📖 学習した入門書（9冊）</h3>
-        <p class="book-note">※プログラミング初心者として基礎を学ぶために読んだ書籍です</p>
-        <div class="book-grid">
-          <div class="book-card">
-            <div class="book-icon">📘</div>
-            <div class="book-info">
-              <div class="book-title">Python 1年生</div>
-              <div class="book-meta">基礎構文・変数・関数</div>
-            </div>
-          </div>
-          <div class="book-card">
-            <div class="book-icon">📘</div>
-            <div class="book-info">
-              <div class="book-title">Python 2年生 スクレイピング</div>
-              <div class="book-meta">Beautiful Soup・requests</div>
-            </div>
-          </div>
-          <div class="book-card">
-            <div class="book-icon">📘</div>
-            <div class="book-info">
-              <div class="book-title">Python 2年生 データ分析</div>
-              <div class="book-meta">pandas・matplotlib</div>
-            </div>
-          </div>
-          <div class="book-card">
-            <div class="book-icon">📘</div>
-            <div class="book-info">
-              <div class="book-title">Python 3年生 機械学習</div>
-              <div class="book-meta">scikit-learn入門</div>
-            </div>
-          </div>
-          <div class="book-card">
-            <div class="book-icon">📘</div>
-            <div class="book-info">
-              <div class="book-title">Python 3年生 ディープラーニング</div>
-              <div class="book-meta">ニューラルネットワーク入門</div>
-            </div>
-          </div>
-          <div class="book-card">
-            <div class="book-icon">📊</div>
-            <div class="book-info">
-              <div class="book-title">データサイエンス 1年生</div>
-              <div class="book-meta">データ分析の基礎</div>
-            </div>
-          </div>
-          <div class="book-card">
-            <div class="book-icon">🗄️</div>
-            <div class="book-info">
-              <div class="book-title">SQL 1年生</div>
-              <div class="book-meta">データベース基礎</div>
-            </div>
-          </div>
-          <div class="book-card">
-            <div class="book-icon">📗</div>
-            <div class="book-info">
-              <div class="book-title">JavaScript 1年生</div>
-              <div class="book-meta">Web開発の基礎</div>
-            </div>
-          </div>
-          <div class="book-card">
-            <div class="book-icon">🤖</div>
-            <div class="book-info">
-              <div class="book-title">ChatGPTプログラミング 1年生</div>
-              <div class="book-meta">AI活用の基礎</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="books-section">
-        <h3 class="book-section-title">📚 現在学習中（オライリー技術書）</h3>
-        <p class="book-note">※より実践的な技術習得のため並行して学習中</p>
-        <div class="book-list-advanced">
-          <div class="book-item-advanced">
-            <span class="book-status">🔄</span>
-            <span class="book-name">入門 Python 3</span>
-          </div>
-          <div class="book-item-advanced">
-            <span class="book-status">🔄</span>
-            <span class="book-name">Pythonではじめる機械学習</span>
-          </div>
-          <div class="book-item-advanced">
-            <span class="book-status">🔄</span>
-            <span class="book-name">退屈なことはPythonにやらせよう</span>
-          </div>
-          <div class="book-item-advanced">
-            <span class="book-status">🔄</span>
-            <span class="book-name">ゼロから作るDeep Learning</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="books-section">
-        <h3 class="book-section-title">📖 現在学習中（入門書）</h3>
-        <div class="book-list-advanced">
-          <div class="book-item-advanced book-item-current">
-            <span class="book-status">🔄</span>
-            <span class="book-name">Java 1年生</span>
-          </div>
-          <div class="book-item-advanced book-item-current">
-            <span class="book-status">🔄</span>
-            <span class="book-name">Python 2年生 アプリ開発の仕組み</span>
-          </div>
-          <div class="book-item-advanced book-item-current">
-            <span class="book-status">🔄</span>
-            <span class="book-name">AWS 1年生 クラウドのしくみ</span>
-          </div>
-        </div>
+      <div class="learning-books">
+        <h3 class="book-category">現在学習中の主要書籍</h3>
+        <ul class="book-simple-list">
+          <li>入門 Python 3（オライリー）</li>
+          <li>Pythonではじめる機械学習（オライリー）</li>
+          <li>退屈なことはPythonにやらせよう（オライリー）</li>
+          <li>ゼロから作るDeep Learning（オライリー）</li>
+        </ul>
       </div>
     </div>
 
+    <!-- Work Experience -->
     <div class="section">
       <h2 class="section-title">💼 Work Experience</h2>
       <div class="experience-list">
@@ -247,37 +260,37 @@
             <div class="experience-period">2017年4月～2025年6月（8年3ヶ月）</div>
           </div>
           <p class="experience-desc">
-            年間40～80件の土地境界確定・登記業務を担当。CADを使った図面作成、多様な関係者との折衝を通じて
-            <span class="highlight">精密性・責任感・調整力</span>を培いました。
+            年間40～80件の土地境界確定・登記業務を担当。
+            <span class="highlight">業務フロー全体を理解し、自動化システムの設計・開発</span>に活かしました。
           </p>
         </div>
 
         <div class="experience-item">
           <div class="experience-header">
-            <div class="experience-title">経営統括 - 仕出し・惣菜販売業（家業）</div>
+            <div class="experience-title">経営統括 - 仕出し・惣菜販売業</div>
             <div class="experience-period">2013年6月～2016年10月（3年5ヶ月）</div>
           </div>
           <p class="experience-desc">
-            移動販売車3台のエリア統括。<span class="highlight">SNS集客で月間60件の新規顧客獲得</span>を実現し、
+            <span class="highlight">SNS集客で月間60件の新規顧客獲得</span>を実現。
             デジタルマーケティングの実践経験を積みました。
           </p>
         </div>
 
         <div class="experience-item">
           <div class="experience-header">
-            <div class="experience-title">経営者 - 古着専門リサイクルショップ（自営）</div>
+            <div class="experience-title">経営者 - 古着リサイクルショップ（自営）</div>
             <div class="experience-period">2010年4月～2013年4月（3年間）</div>
           </div>
           <p class="experience-desc">
-            古着専門リサイクルショップの経営全般を担当。オンラインショップ・オークション・SNSを活用した販売戦略を企画・実行。
-            <span class="highlight">Webページ制作の基礎技術を習得</span>し、限られたリソースで最大の成果を上げるための創意工夫を実践しました。
+            オンライン販売戦略を企画・実行。
+            <span class="highlight">Webページ制作の基礎技術を習得</span>しました。
           </p>
         </div>
 
         <div class="experience-item">
           <div class="experience-header">
             <div class="experience-title">店舗責任者 - 総合リサイクルショップ</div>
-            <div class="experience-period">2006年6月～2010年2月</div>
+            <div class="experience-period">2006年6月～2010年2月（3年8ヶ月）</div>
           </div>
           <p class="experience-desc">
             <span class="highlight">グループ9店舗中、売上伸び率1位</span>を達成。
@@ -287,8 +300,9 @@
       </div>
     </div>
 
+    <!-- Certifications -->
     <div class="section">
-      <h2 class="section-title">🎓 Certifications</h2>
+      <h2 class="section-title">🎓 保有資格</h2>
       <div class="qualifications">
         <div class="qualification-item">
           <div class="qualification-icon">📐</div>
@@ -314,9 +328,13 @@
       </div>
     </div>
 
+    <!-- Contact -->
     <div class="section">
       <h2 class="section-title">📫 Contact</h2>
-      <p class="contact-text">現在、転職活動中です。データ分析・機械学習・業務効率化の分野でのご縁をお待ちしております。</p>
+      <p class="contact-text">
+        現在、業務効率化・アプリ開発・システム自動化分野での転職活動中です。<br>
+        お気軽にご連絡ください。
+      </p>
       <div class="contact-links">
         <a href="https://github.com/D1424-da" target="_blank" class="contact-link github">
           <span class="link-icon">💻</span> GitHub
