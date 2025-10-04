@@ -17,7 +17,6 @@
   --shadow-glow: 0 8px 32px rgba(26, 32, 44, 0.4);
   --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.6);
   
-  /* モバイル用の色定義 */
   --mobile-text-primary: #ffffff;
   --mobile-text-secondary: #f7fafc;
   --mobile-text-accent: #ffffff;
@@ -569,101 +568,6 @@ body::before {
   margin-bottom: 1.5rem;
 }
 
-/* Responsive adjustments for new elements */
-@media (max-width: 768px) {
-  .subsystem-card {
-    padding: 1.5rem;
-  }
-
-  .subsystem-title {
-    font-size: 1.05rem;
-  }
-
-  .results-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .result-number {
-    font-size: 1.2rem;
-  }
-
-  .github-repo-link-sm {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .subsystem-card {
-    padding: 1.2rem;
-  }
-
-  .feature-list li {
-    font-size: 0.9rem;
-  }
-
-  /* 新しいクラスの小型スマホ対応 */
-  .project-card {
-    background: rgba(0, 0, 0, 0.9);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    padding: 1.2rem;
-  }
-
-  /* 全てのテキストを強化 */
-  * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .bio-text, .project-text, .experience-desc, 
-  .subsystem-desc, .feature-list li, .project-desc-simple,
-  .learning-summary, .book-simple-list li, .contact-text {
-    color: #ffffff !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
-    font-weight: 600 !important;
-  }
-
-  .subsystem-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 1rem;
-  }
-
-  .tech-stack-inline {
-    gap: 0.3rem;
-  }
-
-  .tech-badge-sm {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
-  }
-
-  .results-grid {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-
-  .result-item {
-    padding: 0.8rem;
-  }
-
-  .github-repo-link-sm {
-    padding: 0.4rem 1rem;
-    font-size: 0.8rem;
-  }
-
-  .learning-books {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1.2rem;
-  }
-
-  .project-card-simple {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-  }
-}
-
 /* Learning */
 .learning-summary {
   color: var(--text-secondary);
@@ -856,6 +760,11 @@ body::before {
   border-radius: 20px 20px 0 0;
 }
 
+.tech-fw {
+  background: rgba(113, 128, 150, 0.1);
+  border-color: rgba(113, 128, 150, 0.3);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   body {
@@ -909,28 +818,155 @@ body::before {
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
   }
+  
+  .subsystem-card {
+    padding: 1.5rem;
+  }
+
+  .subsystem-title {
+    font-size: 1.05rem;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .result-number {
+    font-size: 1.2rem;
+  }
+
+  .github-repo-link-sm {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 480px) {
   body {
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a2e 100%);
+    background: #000000;
   }
 
   /* すべてのセクションの背景を強化 */
   .profile-header, .section {
-    background: rgba(0, 0, 0, 0.9) !important;
-    border: 2px solid rgba(255, 255, 255, 0.4) !important;
-    backdrop-filter: blur(20px) !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 2px solid rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(25px) !important;
+    padding: 1.5rem !important;
+  }
+  
+  /* すべてのテキストを白ベースに */
+  .bio-text, .project-text, .experience-desc, 
+  .subsystem-desc, .project-desc-simple,
+  .learning-summary, .contact-text {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
+    font-weight: 500 !important;
+    line-height: 1.8 !important;
+  }
+  
+  .feature-list li, .project-list li, .book-simple-list li {
+    color: #f0f0f0 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 500 !important;
   }
 
   .name {
-    font-size: 1.4rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+    font-weight: 700 !important;
+  }
+  
+  .title, .meta, .status {
+    color: #f5f5f5 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
   }
 
   .section-title {
-    font-size: 1.2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 1.3rem;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+    font-weight: 700 !important;
+  }
+  
+  .project-title, .project-title-simple, .subsection-title {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+  }
+  
+  .subsystem-title, .project-subtitle, .book-category, .experience-title {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+  }
+
+  .project-card {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    padding: 1.5rem !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  .subsystem-card {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+    border-left: 4px solid #ffffff !important;
+    backdrop-filter: blur(15px) !important;
+    padding: 1.3rem !important;
+  }
+  
+  .project-card-simple, .learning-books, .experience-item, 
+  .qualification-item, .result-item {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(15px) !important;
+  }
+  
+  .results-section, .project-section {
+    background: rgba(0, 0, 0, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .tech-badge-sm, .tech-badge, .focus-tag, .project-tag {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+  }
+  
+  .result-number {
+    color: #ffffff !important;
+    font-size: 1.3rem !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 700 !important;
+  }
+
+  .result-label {
+    color: #f0f0f0 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+  }
+  
+  .experience-period, .qualification-date {
+    color: #e0e0e0 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  .qualification-name {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+  }
+  
+  .highlight {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    font-weight: 700 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9) !important;
   }
 
   .github-repo-link {
@@ -943,338 +979,38 @@ body::before {
     font-size: 0.9rem;
   }
 
-  /* 新しいクラスの小型スマホ対応 */
-  .project-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 1.2rem;
-    backdrop-filter: blur(15px);
-  }
-
-  .subsystem-card {
-    background: var(--mobile-dark-bg);
-    border: 1px solid var(--mobile-glass-border);
-    border-left: 3px solid var(--mobile-text-accent);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem;
-  }
-
-  .subsystem-title {
-    color: var(--mobile-text-primary);
-    font-size: 1rem;
-  }
-
-  .subsystem-desc {
-    color: var(--mobile-text-secondary);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    font-weight: 500;
-  }
-
-  .feature-list li {
-    color: var(--mobile-text-secondary);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    font-weight: 500;
-  }
-
-  .feature-list li:before {
-    color: var(--mobile-text-accent);
+  .tech-stack-inline {
+    gap: 0.4rem;
   }
 
   .tech-badge-sm {
-    background: var(--mobile-dark-bg);
-    border: 1px solid var(--mobile-glass-border);
-    color: var(--mobile-text-primary);
-    font-size: 0.75rem;
-    padding: 0.25rem 0.6rem;
-  }
-
-  .github-repo-link-sm {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
-  }
-
-  .results-section {
-    background: var(--mobile-dark-bg);
-    border: 1px solid var(--mobile-glass-border);
-    backdrop-filter: blur(10px);
-  }
-
-  .result-item {
-    background: var(--mobile-card-bg);
-    border: 1px solid var(--mobile-glass-border);
-  }
-
-  .result-number {
-    color: var(--mobile-text-primary);
-    font-size: 1.1rem;
-  }
-
-  .result-label {
-    color: var(--mobile-text-secondary);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    font-weight: 600;
-  }
-
-  .project-card-simple {
-    background: var(--mobile-card-bg);
-    border: 1px solid var(--mobile-glass-border);
-    backdrop-filter: blur(15px);
-    padding: 1.5rem;
-  }
-
-  .project-title-simple {
-    color: var(--mobile-text-primary);
-    font-size: 1.1rem;
-  }
-
-  .project-desc-simple {
-    color: var(--mobile-text-secondary);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    font-weight: 500;
-  }
-
-  .learning-summary {
-    color: var(--mobile-text-secondary);
-    font-size: 1rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    font-weight: 500;
-  }
-
-  .learning-books {
-    background: var(--mobile-card-bg);
-    border: 1px solid var(--mobile-glass-border);
-    backdrop-filter: blur(10px);
-  }
-
-  .book-category {
-    color: var(--mobile-text-primary);
-  }
-
-  .book-simple-list li {
-    color: var(--mobile-text-secondary);
-    border-bottom: 1px solid var(--mobile-glass-border);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    font-weight: 500;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
   }
 
   .results-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
-  .tech-stack-inline {
-    gap: 0.4rem;
+  .result-item {
+    padding: 0.8rem;
   }
-}
 
-/* 新しいプロジェクトレイアウト用のスタイル */
-.project-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border-radius: 16px;
-  padding: 2.5rem;
-  border: 1px solid var(--glass-border);
-  margin-bottom: 2rem;
-}
+  .github-repo-link-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
 
-.main-project {
-  border-left: 4px solid var(--text-accent);
-}
+  .subsystem-card {
+    padding: 1rem;
+  }
 
-.project-section {
-  margin-bottom: 2rem;
-}
+  .learning-books {
+    padding: 1.2rem;
+  }
 
-.subsystem-card {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border: 1px solid var(--glass-border);
-  border-left: 3px solid var(--text-accent);
-}
-
-.subsystem-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-
-.subsystem-desc {
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-}
-
-.subsystem-features {
-  margin-bottom: 1.5rem;
-}
-
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-.feature-list li {
-  color: var(--text-secondary);
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.feature-list li:before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--text-accent);
-  font-weight: bold;
-}
-
-.tech-stack-inline {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.tech-badge-sm {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  color: var(--text-primary);
-  padding: 0.3rem 0.8rem;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid var(--glass-border);
-}
-
-.github-repo-link-sm {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--primary-gradient);
-  color: var(--text-primary);
-  padding: 0.6rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  border: 1px solid var(--glass-border);
-}
-
-.github-repo-link-sm:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(45, 55, 72, 0.4);
-}
-
-.results-section {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(5px);
-  border-radius: 12px;
-  padding: 2rem;
-  border: 1px solid var(--glass-border);
-}
-
-.results-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.result-item {
-  text-align: center;
-  padding: 1rem;
-  background: var(--glass-bg);
-  border-radius: 8px;
-  border: 1px solid var(--glass-border);
-}
-
-.result-number {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-
-.result-label {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.project-card-simple {
-  background: var(--glass-bg);
-  backdrop-filter: blur(15px);
-  border-radius: 12px;
-  padding: 2rem;
-  border: 1px solid var(--glass-border);
-  margin-bottom: 1.5rem;
-}
-
-.project-title-simple {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-
-.project-desc-simple {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-.learning-summary {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  font-size: 1.05rem;
-}
-
-.learning-books {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 2rem;
-  border: 1px solid var(--glass-border);
-}
-
-.book-category {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-}
-
-.book-simple-list {
-  list-style: none;
-  padding: 0;
-}
-
-.book-simple-list li {
-  color: var(--text-secondary);
-  padding: 0.8rem 0;
-  border-bottom: 1px solid var(--glass-border);
-  position: relative;
-  padding-left: 2rem;
-}
-
-.book-simple-list li:before {
-  content: "📚";
-  position: absolute;
-  left: 0;
-  top: 0.8rem;
-}
-
-.book-simple-list li:last-child {
-  border-bottom: none;
-}
-
-.tech-fw {
-  background: rgba(113, 128, 150, 0.1);
-  border-color: rgba(113, 128, 150, 0.3);
+  .project-card-simple {
+    padding: 1rem;
+  }
 }
