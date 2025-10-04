@@ -5,17 +5,27 @@
 }
 
 :root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --dark-bg: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --text-primary: #ffffff;
-  --text-secondary: #b8c6db;
-  --text-accent: #00f2fe;
-  --shadow-glow: 0 8px 32px rgba(31, 38, 135, 0.37);
-  --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.5);
+  --primary-gradient: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  --secondary-gradient: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  --accent-gradient: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+  --dark-bg: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(226, 232, 240, 0.2);
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --text-accent: #cbd5e0;
+  --shadow-glow: 0 8px 32px rgba(26, 32, 44, 0.4);
+  --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.6);
+  
+  /* モバイル用の色定義 */
+  --mobile-text-primary: #f7fafc;
+  --mobile-text-secondary: #e2e8f0;
+  --mobile-text-accent: #cbd5e0;
+  --mobile-glass-bg: rgba(26, 32, 44, 0.7);
+  --mobile-glass-border: rgba(226, 232, 240, 0.2);
+  --mobile-highlight-bg: rgba(203, 213, 224, 0.2);
+  --mobile-card-bg: rgba(45, 55, 72, 0.8);
+  --mobile-dark-bg: rgba(26, 32, 44, 0.9);
 }
 
 body {
@@ -37,9 +47,9 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(74, 85, 104, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(113, 128, 150, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(226, 232, 240, 0.08) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
 }
@@ -98,13 +108,13 @@ body::before {
   border: 3px solid var(--text-accent);
   object-fit: cover;
   flex-shrink: 0;
-  box-shadow: 0 0 30px rgba(0, 242, 254, 0.4);
+  box-shadow: 0 0 20px rgba(203, 213, 224, 0.3);
   transition: all 0.3s ease;
 }
 
 .avatar:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(0, 242, 254, 0.6);
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(203, 213, 224, 0.5);
 }
 
 .header-text {
@@ -221,12 +231,13 @@ body::before {
 }
 
 .highlight {
-  background: rgba(0, 242, 254, 0.2);
-  padding: 0.1rem 0.4rem;
-  border-radius: 6px;
+  background: rgba(226, 232, 240, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
   font-weight: 600;
-  color: var(--text-accent);
-  border: 1px solid rgba(0, 242, 254, 0.3);
+  color: var(--text-primary);
+  border: 1px solid rgba(226, 232, 240, 0.25);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Projects */
@@ -271,18 +282,21 @@ body::before {
 
 .project-tag {
   background: var(--primary-gradient);
-  color: white;
+  color: var(--text-primary);
   padding: 0.5rem 1.1rem;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 0.9rem;
-  font-weight: 500;
-  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(45, 55, 72, 0.4);
   transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(226, 232, 240, 0.1);
 }
 
 .project-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(45, 55, 72, 0.6);
+  background: var(--secondary-gradient);
 }
 
 .project-section {
@@ -761,10 +775,12 @@ body::before {
 
 .contact-link.github {
   background: var(--primary-gradient);
+  border: 1px solid rgba(226, 232, 240, 0.2);
 }
 
 .contact-link.email {
   background: var(--secondary-gradient);
+  border: 1px solid rgba(226, 232, 240, 0.2);
 }
 
 .link-icon {
