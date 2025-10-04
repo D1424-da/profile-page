@@ -766,6 +766,103 @@ body::before {
 }
 
 /* Responsive */
+/* iPad mini専用調整（縦向き・横向き両対応） */
+@media (min-width: 481px) and (max-width: 1133px) {
+  body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d3748 100%);
+  }
+
+  .profile-header, .section {
+    background: rgba(0, 0, 0, 0.88) !important;
+    border: 2px solid rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(22px) !important;
+  }
+
+  /* すべての本文テキストを白寄りに */
+  .bio-text, .project-text, .experience-desc, 
+  .subsystem-desc, .project-desc-simple,
+  .learning-summary, .contact-text {
+    color: #f8f8f8 !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.85) !important;
+    font-weight: 500 !important;
+    line-height: 1.9 !important;
+  }
+  
+  .feature-list li, .project-list li, .book-simple-list li {
+    color: #f3f3f3 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 500 !important;
+  }
+
+  /* 見出し系を完全な白に */
+  .name {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.85) !important;
+    font-weight: 700 !important;
+  }
+  
+  .title, .meta, .status {
+    color: #f8f8f8 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75) !important;
+  }
+
+  .section-title {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.85) !important;
+    font-weight: 700 !important;
+  }
+  
+  .project-title, .project-title-simple, .subsection-title,
+  .subsystem-title, .project-subtitle, .book-category, 
+  .experience-title, .qualification-name {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+  }
+
+  /* カード背景を濃く */
+  .project-card, .subsystem-card, .project-card-simple, 
+  .learning-books, .experience-item, .qualification-item,
+  .result-item, .project-section, .results-section {
+    background: rgba(0, 0, 0, 0.82) !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+    backdrop-filter: blur(18px) !important;
+  }
+
+  /* タグ・バッジの視認性向上 */
+  .tech-badge, .tech-badge-sm, .focus-tag, .project-tag {
+    background: rgba(255, 255, 255, 0.14) !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75) !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .result-number {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 700 !important;
+  }
+
+  .result-label, .experience-period, .qualification-date {
+    color: #f0f0f0 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75) !important;
+  }
+
+  .highlight {
+    background: rgba(255, 255, 255, 0.22) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.85) !important;
+    font-weight: 700 !important;
+  }
+
+  /* ボタン・リンクの視認性 */
+  .github-repo-link, .github-repo-link-sm, .contact-link {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     padding: 1rem 0.5rem;
