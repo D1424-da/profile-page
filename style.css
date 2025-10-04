@@ -18,14 +18,14 @@
   --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.6);
   
   /* モバイル用の色定義 */
-  --mobile-text-primary: #f7fafc;
-  --mobile-text-secondary: #e2e8f0;
-  --mobile-text-accent: #cbd5e0;
-  --mobile-glass-bg: rgba(26, 32, 44, 0.7);
-  --mobile-glass-border: rgba(226, 232, 240, 0.2);
-  --mobile-highlight-bg: rgba(203, 213, 224, 0.2);
-  --mobile-card-bg: rgba(45, 55, 72, 0.8);
-  --mobile-dark-bg: rgba(26, 32, 44, 0.9);
+  --mobile-text-primary: #ffffff;
+  --mobile-text-secondary: #f7fafc;
+  --mobile-text-accent: #ffffff;
+  --mobile-glass-bg: rgba(0, 0, 0, 0.8);
+  --mobile-glass-border: rgba(255, 255, 255, 0.4);
+  --mobile-highlight-bg: rgba(255, 255, 255, 0.3);
+  --mobile-card-bg: rgba(0, 0, 0, 0.9);
+  --mobile-dark-bg: rgba(0, 0, 0, 0.95);
 }
 
 body {
@@ -945,10 +945,14 @@ body::before {
 
   .subsystem-desc {
     color: var(--mobile-text-secondary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
   }
 
   .feature-list li {
     color: var(--mobile-text-secondary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
   }
 
   .feature-list li:before {
@@ -986,6 +990,8 @@ body::before {
 
   .result-label {
     color: var(--mobile-text-secondary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 600;
   }
 
   .project-card-simple {
@@ -1002,11 +1008,15 @@ body::before {
 
   .project-desc-simple {
     color: var(--mobile-text-secondary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
   }
 
   .learning-summary {
     color: var(--mobile-text-secondary);
     font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
   }
 
   .learning-books {
@@ -1022,6 +1032,8 @@ body::before {
   .book-simple-list li {
     color: var(--mobile-text-secondary);
     border-bottom: 1px solid var(--mobile-glass-border);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
   }
 
   .results-grid {
