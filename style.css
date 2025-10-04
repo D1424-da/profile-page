@@ -602,6 +602,52 @@ body::before {
   .feature-list li {
     font-size: 0.9rem;
   }
+
+  /* 新しいクラスの小型スマホ対応 */
+  .project-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1.2rem;
+  }
+
+  .subsystem-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 1rem;
+  }
+
+  .tech-stack-inline {
+    gap: 0.3rem;
+  }
+
+  .tech-badge-sm {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .result-item {
+    padding: 0.8rem;
+  }
+
+  .github-repo-link-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .learning-books {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1.2rem;
+  }
+
+  .project-card-simple {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+  }
 }
 
 /* Learning */
@@ -852,26 +898,139 @@ body::before {
 }
 
 @media (max-width: 480px) {
+  body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  }
+
   .name {
     font-size: 1.4rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
 
   .section-title {
     font-size: 1.2rem;
-  }
-
-  .project-card {
-    padding: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .github-repo-link {
-    padding: 0.9rem 1.5rem;
-    font-size: 0.95rem;
+    padding: 0.8rem 1.3rem;
+    font-size: 0.9rem;
   }
 
   .contact-link {
-    padding: 0.9rem 1.5rem;
-    font-size: 0.95rem;
+    padding: 0.8rem 1.3rem;
+    font-size: 0.9rem;
+  }
+
+  /* 新しいクラスの小型スマホ対応 */
+  .project-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1.2rem;
+    backdrop-filter: blur(15px);
+  }
+
+  .subsystem-card {
+    background: var(--mobile-dark-bg);
+    border: 1px solid var(--mobile-glass-border);
+    border-left: 3px solid var(--mobile-text-accent);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+  }
+
+  .subsystem-title {
+    color: var(--mobile-text-primary);
+    font-size: 1rem;
+  }
+
+  .subsystem-desc {
+    color: var(--mobile-text-secondary);
+  }
+
+  .feature-list li {
+    color: var(--mobile-text-secondary);
+  }
+
+  .feature-list li:before {
+    color: var(--mobile-text-accent);
+  }
+
+  .tech-badge-sm {
+    background: var(--mobile-dark-bg);
+    border: 1px solid var(--mobile-glass-border);
+    color: var(--mobile-text-primary);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .github-repo-link-sm {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .results-section {
+    background: var(--mobile-dark-bg);
+    border: 1px solid var(--mobile-glass-border);
+    backdrop-filter: blur(10px);
+  }
+
+  .result-item {
+    background: var(--mobile-card-bg);
+    border: 1px solid var(--mobile-glass-border);
+  }
+
+  .result-number {
+    color: var(--mobile-text-primary);
+    font-size: 1.1rem;
+  }
+
+  .result-label {
+    color: var(--mobile-text-secondary);
+  }
+
+  .project-card-simple {
+    background: var(--mobile-card-bg);
+    border: 1px solid var(--mobile-glass-border);
+    backdrop-filter: blur(15px);
+    padding: 1.5rem;
+  }
+
+  .project-title-simple {
+    color: var(--mobile-text-primary);
+    font-size: 1.1rem;
+  }
+
+  .project-desc-simple {
+    color: var(--mobile-text-secondary);
+  }
+
+  .learning-summary {
+    color: var(--mobile-text-secondary);
+    font-size: 1rem;
+  }
+
+  .learning-books {
+    background: var(--mobile-card-bg);
+    border: 1px solid var(--mobile-glass-border);
+    backdrop-filter: blur(10px);
+  }
+
+  .book-category {
+    color: var(--mobile-text-primary);
+  }
+
+  .book-simple-list li {
+    color: var(--mobile-text-secondary);
+    border-bottom: 1px solid var(--mobile-glass-border);
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tech-stack-inline {
+    gap: 0.4rem;
   }
 }
 
