@@ -89,8 +89,20 @@
           <p class="project-text">業務フローに沿った3段階の自動化を実現：</p>
         </div>
 
+        <!-- ステップ1: GPSSCAN -->
         <div class="subsystem-card">
           <h4 class="subsystem-title">ステップ1: GPSSCAN（写真リネーム自動化）</h4>
+          
+          <!-- デモサムネイル追加 -->
+          <div class="demo-container">
+            <img 
+              class="demo-thumbnail" 
+              src="docs/images/gpsscan_screenshot.png" 
+              alt="GPSSCAN 地図表示とドラッグ&ドロップUI"
+              onclick="openModal('gpsscanDemo')">
+            <p class="demo-label">📹 クリックでデモを見る</p>
+          </div>
+          
           <p class="subsystem-desc">
             SIMファイル（測量データ）とGPS情報から、写真を測量点に自動マッチング。
             体系的なファイル名に一括リネーム。
@@ -118,8 +130,20 @@
           </div>
         </div>
 
+        <!-- ステップ2: AI画像認識 -->
         <div class="subsystem-card">
           <h4 class="subsystem-title">ステップ2: AI画像認識（写真分類自動化）</h4>
+          
+          <!-- デモサムネイル追加 -->
+          <div class="demo-container">
+            <img 
+              class="demo-thumbnail" 
+              src="docs/images/ai_screenshot.png" 
+              alt="AI画像認識システム"
+              onclick="openModal('aiDemo')">
+            <p class="demo-label">📹 クリックでデモを見る</p>
+          </div>
+          
           <p class="subsystem-desc">
             機械学習により、写真の内容を自動判別。遠景/近景などを自動分類し、
             次のステップに必要な情報を付与。
@@ -145,8 +169,20 @@
           </div>
         </div>
 
+        <!-- ステップ3: 自動写真アルバム -->
         <div class="subsystem-card">
           <h4 class="subsystem-title">ステップ3: 自動写真アルバム（報告書配置自動化）</h4>
+          
+          <!-- デモサムネイル追加 -->
+          <div class="demo-container">
+            <img 
+              class="demo-thumbnail" 
+              src="docs/images/vba_screenshot.png" 
+              alt="Excel VBA 自動配置システム"
+              onclick="openModal('vbaDemo')">
+            <p class="demo-label">📹 クリックでデモを見る</p>
+          </div>
+          
           <p class="subsystem-desc">
             Excel VBAにより、整理された写真を報告書フォーマットに自動配置。
             最終的な測量報告書を完成。
@@ -198,6 +234,7 @@
         <div class="tech-stack-inline">
           <span class="tech-badge-sm">Python</span>
           <span class="tech-badge-sm">Tkinter</span>
+          <span class="tech-badge-sm">SQLite FTS5</span>
         </div>
         <div class="github-link-section">
           <a href="https://github.com/D1424-da/file-search-app" target="_blank" class="github-repo-link-sm">
@@ -372,5 +409,62 @@
       <p>© 2025 Daisuke Ikeda. 24年の実務経験 × プログラミング技術で価値を創造します。</p>
     </footer>
   </div>
+
+  <!-- モーダル（3つのプロジェクト用） -->
+  <!-- GPSSCAN -->
+  <div id="gpsscanDemo" class="modal" onclick="closeModal('gpsscanDemo')">
+    <span class="close" onclick="closeModal('gpsscanDemo'); event.stopPropagation();">&times;</span>
+    <img class="modal-content" id="gpsscanDemoImg" onclick="event.stopPropagation();">
+  </div>
+
+  <!-- AI画像認識 -->
+  <div id="aiDemo" class="modal" onclick="closeModal('aiDemo')">
+    <span class="close" onclick="closeModal('aiDemo'); event.stopPropagation();">&times;</span>
+    <img class="modal-content" id="aiDemoImg" onclick="event.stopPropagation();">
+  </div>
+
+  <!-- 自動写真アルバム（VBA） -->
+  <div id="vbaDemo" class="modal" onclick="closeModal('vbaDemo')">
+    <span class="close" onclick="closeModal('vbaDemo'); event.stopPropagation();">&times;</span>
+    <img class="modal-content" id="vbaDemoImg" onclick="event.stopPropagation();">
+  </div>
+
+  <script>
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      const img = document.getElementById(modalId + 'Img');
+      
+      // GIFを遅延読み込み（クリック時のみ読み込む）
+      if (!img.src) {
+        // モーダルIDに応じて適切なGIFを読み込む
+        const gifPaths = {
+          'gpsscanDemo': 'docs/images/gpsscan_demo.gif',
+          'aiDemo': 'docs/images/ai_demo.gif',
+          'vbaDemo': 'docs/images/vba_demo.gif'
+        };
+        img.src = gifPaths[modalId];
+      }
+      
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // スクロール防止
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'none';
+      document.body.style.overflow = ''; // スクロール復元
+    }
+
+    // ESCキーでモーダルを閉じる
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modals = document.getElementsByClassName('modal');
+        for (let modal of modals) {
+          modal.style.display = 'none';
+        }
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 </body>
 </html>

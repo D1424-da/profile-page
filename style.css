@@ -1169,3 +1169,200 @@ body::before {
     padding: 1rem;
   }
 }
+/* ==================== モーダルスタイル ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  margin: 3% auto;
+  display: block;
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  animation: modalZoomIn 0.4s ease-out;
+}
+
+@keyframes modalZoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  color: var(--text-primary);
+  font-size: 50px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  z-index: 2001;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.close:hover,
+.close:focus {
+  color: var(--text-accent);
+  transform: rotate(90deg);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.demo-thumbnail {
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 700px;
+  border: 2px solid var(--glass-border);
+  box-shadow: var(--shadow-glow);
+}
+
+.demo-thumbnail:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-strong), 0 0 30px rgba(102, 126, 234, 0.4);
+  border-color: var(--text-accent);
+}
+
+.demo-label {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-accent);
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.demo-container {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+}
+
+/* レスポンシブ対応（iPad mini） */
+@media (min-width: 481px) and (max-width: 1133px) {
+  .modal-content {
+    max-width: 85%;
+    max-height: 80%;
+  }
+  
+  .close {
+    top: 20px;
+    right: 30px;
+    font-size: 45px;
+  }
+  
+  .demo-thumbnail {
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+  
+  .demo-label {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+  }
+}
+
+/* タブレット対応 */
+@media (max-width: 768px) {
+  .modal-content {
+    margin: 5% auto;
+    max-width: 92%;
+    max-height: 75%;
+  }
+  
+  .close {
+    top: 15px;
+    right: 20px;
+    font-size: 40px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .demo-container {
+    padding: 1rem;
+  }
+  
+  .demo-label {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+  }
+}
+
+/* スマホ対応 */
+@media (max-width: 480px) {
+  .modal {
+    background-color: rgba(0, 0, 0, 0.98);
+  }
+  
+  .modal-content {
+    margin: 10% auto;
+    max-width: 95%;
+    max-height: 70%;
+  }
+  
+  .close {
+    top: 10px;
+    right: 15px;
+    font-size: 35px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  }
+  
+  .demo-container {
+    padding: 0.8rem;
+    margin: 1.5rem 0;
+  }
+  
+  .demo-thumbnail {
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  }
+  
+  .demo-label {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem;
+  }
+}
